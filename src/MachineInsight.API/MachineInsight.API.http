@@ -1,0 +1,6 @@
+@MachineInsight.API_HostAddress = http://localhost:5135
+
+GET {{MachineInsight.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

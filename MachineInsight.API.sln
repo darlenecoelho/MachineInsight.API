@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36119.2
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MachineInsight.API", "src\MachineInsight.API\MachineInsight.API.csproj", "{C6B65163-FCE9-4957-808F-C1E427BBAAA4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MachineInsight.Application", "src\MachineInsight.Application\MachineInsight.Application.csproj", "{92C7E850-ADF3-4F2B-9A10-268766760F5B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MachineInsight.Infrastructure", "src\MachineInsight.Infrastructure\MachineInsight.Infrastructure.csproj", "{EA45A329-4E12-4298-8F51-A4DDF65A9B88}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MachineInsight.Domain", "src\MachineInsight.Domain\MachineInsight.Domain.csproj", "{FC8A6B69-57F9-449C-9DED-CB9FD34CC899}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MachineInsight.Tests", "src\MachineInsight.Tests\MachineInsight.Tests.csproj", "{1B8A6B9F-AB08-4497-AA44-025B441CCAF2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C6B65163-FCE9-4957-808F-C1E427BBAAA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6B65163-FCE9-4957-808F-C1E427BBAAA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6B65163-FCE9-4957-808F-C1E427BBAAA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6B65163-FCE9-4957-808F-C1E427BBAAA4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92C7E850-ADF3-4F2B-9A10-268766760F5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92C7E850-ADF3-4F2B-9A10-268766760F5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92C7E850-ADF3-4F2B-9A10-268766760F5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92C7E850-ADF3-4F2B-9A10-268766760F5B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA45A329-4E12-4298-8F51-A4DDF65A9B88}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA45A329-4E12-4298-8F51-A4DDF65A9B88}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA45A329-4E12-4298-8F51-A4DDF65A9B88}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA45A329-4E12-4298-8F51-A4DDF65A9B88}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC8A6B69-57F9-449C-9DED-CB9FD34CC899}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC8A6B69-57F9-449C-9DED-CB9FD34CC899}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC8A6B69-57F9-449C-9DED-CB9FD34CC899}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC8A6B69-57F9-449C-9DED-CB9FD34CC899}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B8A6B9F-AB08-4497-AA44-025B441CCAF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B8A6B9F-AB08-4497-AA44-025B441CCAF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B8A6B9F-AB08-4497-AA44-025B441CCAF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B8A6B9F-AB08-4497-AA44-025B441CCAF2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DA8B5D4B-11DF-4BDD-9686-391F706D8C13}
+	EndGlobalSection
+EndGlobal
