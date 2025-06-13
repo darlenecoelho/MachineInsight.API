@@ -26,7 +26,20 @@ public class MachineConfiguration : IEntityTypeConfiguration<Machine>
                .IsRequired()
                .HasConversion<int>();
 
-        builder.Property(m => m.RPM)
-               .IsRequired();
+        builder.Property(m => m.Rpm)
+               .IsRequired()
+               .HasColumnType("integer");
+
+        builder.Property(m => m.CreatedAt)
+              .HasColumnType("timestamp with time zone")
+              .HasDefaultValueSql("now()")
+              .ValueGeneratedOnAdd()
+              .IsRequired();
+
+        builder.Property(m => m.UpdatedAt)
+             .HasColumnType("timestamp with time zone")
+             .HasDefaultValueSql("now()")
+             .ValueGeneratedOnAdd()
+             .IsRequired();
     }
 }

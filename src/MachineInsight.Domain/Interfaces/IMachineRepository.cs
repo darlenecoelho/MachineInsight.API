@@ -11,4 +11,6 @@ public interface IMachineRepository
     Task AddAsync(Machine machine, CancellationToken cancellationToken = default);
     Task UpdateAsync(Machine machine, CancellationToken cancellationToken = default);
     Task<bool> ExistsAsync(Guid id, CancellationToken cancellationToken = default);
+    Task<bool> ExistsByNameAsync(string name, CancellationToken cancellationToken = default);
+    Task DeleteAsync(Machine machine, CancellationToken cancellationToken = default);
 }

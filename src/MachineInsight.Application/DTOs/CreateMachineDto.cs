@@ -9,4 +9,3 @@ public class CreateMachineDto
     public double Longitude { get; set; }
     public MachineStatus Status { get; set; }
 }
-

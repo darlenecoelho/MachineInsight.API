@@ -1,5 +1,8 @@
-﻿namespace MachineInsight.Domain.ValueObjects;
+﻿using Microsoft.EntityFrameworkCore;
 
+namespace MachineInsight.Domain.ValueObjects;
+
+[Owned]
 public class Location
 {
     private Location() { }
