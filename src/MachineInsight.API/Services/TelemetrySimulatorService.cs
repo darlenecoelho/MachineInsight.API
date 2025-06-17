@@ -33,8 +33,8 @@ public class TelemetrySimulatorService : BackgroundService
         _logger.LogInformation("Telemetry simulator started.");
 
         var values = Enum.GetValues<MachineStatus>()
-                     .Where(s => s != MachineStatus.Unknown)
-                     .ToArray();
+                         .Where(s => s != MachineStatus.Unknown)
+                         .ToArray();
 
         while (!stoppingToken.IsCancellationRequested)
         {
@@ -47,28 +47,35 @@ public class TelemetrySimulatorService : BackgroundService
                 if (machines.Any())
                 {
                     var list = machines.ToList();
-                    var selected = list[_random.Next(list.Count)];
+                    var countToUpdate = Math.Min(3, list.Count);
+                    var selectedMachines = list
+                        .OrderBy(_ => _random.Next())
+                        .Take(countToUpdate)
+                        .ToList();
 
-                    var telemetry = new UpdateTelemetryDto
+                    foreach (var selected in selectedMachines)
                     {
-                        Status = values[_random.Next(values.Length)],
-                        Rpm = _random.Next(500, 3000)
-                    };
+                        var telemetry = new UpdateTelemetryDto
+                        {
+                            Status = values[_random.Next(values.Length)],
+                            Rpm = _random.Next(500, 3000)
+                        };
 
-                    await machineService.UpdateTelemetryAsync(selected.Id, telemetry);
+                        await machineService.UpdateTelemetryAsync(selected.Id, telemetry);
 
-                    await _hubContext.Clients.All.SendAsync("ReceiveTelemetry", new
-                    {
-                        MachineId = selected.Id,
-                        telemetry.Status,
-                        telemetry.Rpm,
-                        Timestamp = DateTime.UtcNow
-                    });
+                        await _hubContext.Clients.All.SendAsync("ReceiveTelemetry", new
+                        {
+                            MachineId = selected.Id,
+                            telemetry.Status,
+                            telemetry.Rpm,
+                            Timestamp = DateTime.UtcNow
+                        });
 
-                    _logger.LogInformation(
-                        "Simulated telemetry for {MachineId}: Status={Status}, RPM={Rpm}",
-                        selected.Id, telemetry.Status, telemetry.Rpm
-                    );
+                        _logger.LogInformation(
+                            "Simulated telemetry for {MachineId}: Status={Status}, RPM={Rpm}",
+                            selected.Id, telemetry.Status, telemetry.Rpm
+                        );
+                    }
                 }
             }
             catch (Exception ex)
