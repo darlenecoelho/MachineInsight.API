@@ -5,6 +5,17 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("MachineInsightUI", policy =>
+    {
+        policy
+            .WithOrigins("http://localhost:4200")  
+            .AllowAnyHeader()
+            .AllowAnyMethod()
+            .AllowCredentials();                   
+    });
+});
 builder.Logging.ClearProviders();
 builder.Logging.AddConsole();
 builder.Logging.AddDebug();
@@ -33,6 +44,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI(c =>
         c.SwaggerEndpoint("/swagger/v1/swagger.json", "MachineInsight API V1"));
 }
+
+app.UseCors("MachineInsightUI");
 
 app.UseHttpsRedirection();
 app.UseAuthorization();
